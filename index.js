@@ -7,6 +7,8 @@ require('dotenv').config();
 
 const app = express();
 
+const PORT = process.env.PORT
+
 app.use( bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -19,7 +21,7 @@ app.get('/', (req, res)=>{
 })
 
 
-app.listen(4000, ()=>{
+app.listen(PORT || 4000,  ()=>{
    db()
-   console.log('running on http://localhost:4000')
+   console.log('running on port ' + PORT) 
 });

@@ -8,7 +8,7 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ghostcod3r",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
