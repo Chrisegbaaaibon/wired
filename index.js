@@ -28,3 +28,5 @@ app.listen(PORT || 4000,  ()=>{
    db()
    console.log('running on port ' + PORT) 
 });
+
+module.exports = app

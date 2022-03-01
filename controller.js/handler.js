@@ -31,7 +31,7 @@ exports.GetEmails = ( req, res)=>{
             message: "Couldn't retrieve all emails!!😑😑"
          });
       }else{
-         res.json(emails)
+         res.json({emails})
       };
    });
 }

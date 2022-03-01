@@ -1,11 +1,16 @@
 {
+  "engines": {
+    "node": "16.13.0",
+    "npm": "8.1.4"
+  },
   "name": "wired",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "test": "jest --testTimeout=30000 ",
+    "start": "nodemon index.js",
+    "build": ""
   },
   "keywords": [],
   "author": "Ghostcod3r",
@@ -20,5 +25,8 @@
     "heroku": "^7.59.2",
     "mongoose": "^6.1.9",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "supertest": "^6.2.2"
   }
 }
