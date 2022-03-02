@@ -8,7 +8,7 @@ const bear = require('../database/schema')
    // let email = new bear();
    console.log(email)
    // email.email = req.body.email;
-   if(email === bear.findOne({email}).select("email")){
+   if(email === bear.findOne({email})){
       res.status(401).json({
          message: "Email already exist!"
       })
