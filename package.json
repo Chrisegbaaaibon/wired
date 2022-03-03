@@ -24,6 +24,7 @@
     "express-router": "^0.0.1",
     "heroku": "^7.59.2",
     "mongoose": "^6.1.9",
+    "mongoose-timestamp": "^0.6.0",
     "nodemon": "^2.0.15"
   },
   "devDependencies": {
