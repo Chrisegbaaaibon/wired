@@ -5,19 +5,26 @@ const bear = require('../database/schema')
 
  exports.AddEmail = async (req, res)=>{
     try {
+      //  Lets make our own status codes
+      //  401 - Email Already Exists
+      //  200 - Email Added Successfully!
        let email = req.body.email;
-      // let email = new bear();
-      console.log(email)
-      // email.email = req.body.email;
-      if(email === bear.findOne({email})){
-         res.status(401).json({
-            message: "Email already exist!"
+      const checkifEmailExists = await bear.find({ email: email }).limit();
+      if (checkifEmailExists.length !== 0){
+         res.json({
+            status: "401"
          })
-      }else{
+      }
+      else{
          let emailCreated = new bear({email})
         await   emailCreated.save()
-         res.status(200).json({
-            message: "Added!🚀🚀",
+        // In case if you still wiant to use it
+         // res.status(200).json({
+         //    message: "Added!🚀🚀",
+         //    data: emailCreated
+         // })
+         res.json({
+            status: "200",
             data: emailCreated
          })
       }
@@ -27,14 +34,14 @@ const bear = require('../database/schema')
    }
 
 exports.GetEmails = ( req, res)=>{
-   bear.find((err, emails)=>{
-      if(err){
-         console.log(err)
-         res.status(401).json({
-            message: "Couldn't retrieve all emails!!😑😑"
-         });
-      }else{
-         res.json({emails})
-      };
-   });
+   // bear.find((err, emails)=>{
+   //    if(err){
+   //       console.log(err)
+   //       res.status(401).json({
+   //          message: "Couldn't retrieve all emails!!😑😑"
+   //       });
+   //    }else{
+   //       res.json({emails})
+   //    };
+   // });
 }
