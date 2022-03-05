@@ -34,14 +34,14 @@ const bear = require('../database/schema')
    }
 
 exports.GetEmails = ( req, res)=>{
-   // bear.find((err, emails)=>{
-   //    if(err){
-   //       console.log(err)
-   //       res.status(401).json({
-   //          message: "Couldn't retrieve all emails!!😑😑"
-   //       });
-   //    }else{
-   //       res.json({emails})
-   //    };
-   // });
+   bear.find((err, emails)=>{
+      if(err){
+         console.log(err)
+         res.status(401).json({
+            message: "Couldn't retrieve all emails!!😑😑"
+         });
+      }else{
+         res.json({emails})
+      };
+   });
 }
